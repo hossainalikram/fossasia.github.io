@@ -522,9 +522,11 @@ button:active,
 }
 .page-section {
   padding: 4em 0 3em;
+    overflow: hidden;
 }
 .page-section:nth-child(odd) {
   background: #f6f6f6;
+  text-align: center;
 }
 .section__title {
   text-align: center;
@@ -551,8 +553,8 @@ img {
 .masthead {
   overflow: hidden;
   position: fixed;
-  background: white;
-  z-index: 3;
+  background: rgba(255,255,255,.9);
+  z-index: 999999;
   width: 100%
 }
 .masthead-cont {
@@ -562,6 +564,7 @@ img {
   height: 1.5em;
   float: left;
   padding: 1.5em 0;
+  text-align: center;
 }
 .masthead .logo img {
   max-height: 100%;
@@ -572,19 +575,20 @@ img {
 .menu ul {
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
 }
 .menu li {
   list-style: none;
   display: block;
   float: left;
+  text-align: center;
 }
 .menu a {
   display: block;
   padding: 1.5em;
 }
 .menu a:hover {
-  background: #f6f6f6;
-  opacity:1.0;
+  background: #fff;
 }
 /* Hero
    ========================================================================== */
@@ -673,11 +677,24 @@ img {
 .person__img img {
   border-radius: 50%;
   display: block;
+  width: 100%;
 }
 .person__name {
   font-size: 1.5em;
 }
-/* SUBSCRIBE EMAIL
+
+
+
+.person--contributer h1 {
+  font-size: 1.25em;
+}
+.person--contributer .person__img {
+  margin: 0 1em;
+}
+
+
+/* ==========================================================================
+   SUBSCRIBE EMAIL
    ========================================================================== */
  #mc_embed_signup{
  padding-bottom: 5%;
@@ -719,30 +736,21 @@ img {
    =FOOTER
    ========================================================================== */
 .colophon {
-  background-color: #e0e0e0;
-  padding: 10px;
+  background: #f6f6f6;
+  font-size: .75em;
+  padding-top: 3em;
+  margin-top: 3em;
 }
-.colophon a:hover{
-    text-decoration: none;
+.colophon h3 {
+  font-weight: 700;
+  text-transform: uppercase;
 }
+
 .colophon p {
   text-align: center;
 }
-
 .heart {
-  font-size: 20px;
-  color: #ff69b4;
-}
-.boxes {
-  display: block;
-  padding: 0 0 20px 0;
-  text-align: center;
-}
-.box {
-  width: 330px;
-  font-size: 15px;
-  padding: 0 15px;
-  display: inline-table;
+  color: hotpink;
 }
 .box .box_title {
   font-weight: bold;
@@ -801,9 +809,7 @@ img {
 }
 
 .made_text {
-  border-top: 1px solid #f6f6f6;
-  font-size: 14px;
-  padding: 5px 0;
+  padding: 2em 0;
 }
 /* ==========================================================================
    =MEDIA
@@ -840,29 +846,77 @@ img {
   display: block;
 }
 
-/* overlay */
-
-header{
-  background-color: #f6f6f6;
-  opacity: 0.6;
-  position: absolute;
-  z-index:100;
-  width:100%
-}
-header:hover{
-  background-color:white;
-  opacity:0.7;
-}
-.logo,.menu:hover{
-  opacity:1.0;
-}
-
 /* ==========================================================================
    =TABLE PROPERTIES
    ========================================================================== */
    
 table{
-    width:100%;
-    table-layout:fixed;
-	}
+  width:100%;
+  table-layout:fixed;
+}
 
+/* ==========================================================================
+   =MOBILE
+   ========================================================================== */
+body, html {
+    /*Fixes an issue with unwanted horizontal scrolling on the whole page*/
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.toggle{
+display:none;/*Implemented by Ramswaroop Soren, just to get that hidden*/
+}
+@media (max-width: 60em) {
+    .menu li {
+        width:33.3333%;
+    }
+    .logo {
+        width:100%;   
+    }
+    .masthead {
+        position:relative;   
+    }
+    #map iframe {
+        height: 300px;
+    }
+    .animated {
+        -webkit-animation-name: none;
+        animation-name: none;
+    }
+}
+@media (max-width: 45em) {
+    .menu li {
+        width:50%;
+    }
+}
+@media (max-width: 30em) {
+    .person {
+        height: 100px;   
+    }
+    .person__img {
+        width: 25%;
+        float: left;
+        overflow: visible;
+    }
+    .person__name {
+        text-align: right;   
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .person__img__info {
+        opacity: 1;
+        background: none;
+        -webkit-transform:none;
+        transform: none;
+        width: 400%;
+    }
+    .person__img__info__cont {
+        position: absolute;
+        right: 0px;
+        top: auto;
+        bottom: -20px;
+        border-radius: 10px;
+        background-color: rgba(52, 152, 219, 0.5);   
+    }
+}
