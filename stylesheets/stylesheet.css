@@ -34,6 +34,23 @@ html {
 body {
   margin: 0;
 }
+::selection {
+  color: #FFFFFF;
+  background-color: #66CC99;
+}
+-webkit-::selection {
+  color: #FFFFFF;
+  background-color: #66CC99;
+}
+-moz-::selection {
+  color: #FFFFFF;
+  background-color: #66CC99;
+}
+#photostream {
+  width: 60em;
+  margin: 0 auto;
+  max-width: 90%
+}
 a:focus {
   outline: thin dotted;
 }
@@ -530,7 +547,7 @@ button:active,
 }
 .section__title {
   text-align: center;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   font-size: 2em;
   margin: 0 0 0.5em;
@@ -553,9 +570,15 @@ img {
 .masthead {
   overflow: hidden;
   position: fixed;
-  background: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.6);
   z-index: 999999;
-  width: 100%
+  width: 100%;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+}
+.masthead:hover {
+  background: rgba(240,240,240,1);
 }
 .masthead-cont {
   font-size: 16px;
@@ -589,7 +612,11 @@ img {
 }
 .menu a:hover {
   background: #fff;
+  text-decoration: underline;
 }
+.socialbtn{
+        margin-left: 15px;
+    }
 /* Hero
    ========================================================================== */
 .section--hero.section--hero {
@@ -708,11 +735,11 @@ img {
   display: block;
   padding: 8px 4px;
   text-indent: 5px;
-  color: #818181;
+  color: black;
   font-size: 1.0em;
   background: #f3f3f3;
   font-weight: bold;
-  width: 25%;
+  width: 36%;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   transition: all 0.2s linear;
@@ -728,7 +755,7 @@ img {
  display: block; 
  font-size: 200% !important;
  padding-left: 20px; 
- color: #616161; 
+ color: #000000; 
  font-weight: bold;
 }
 
@@ -806,6 +833,16 @@ img {
   width: 48px;
   height: 48px;
   display: inline-block;
+}
+
+.social .linkedin {
+  background: url(../images/list/linkedin.png) no-repeat;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+}
+.bottom-git{
+  background-color:rgba(174, 174, 174, 0.66);
 }
 
 .made_text {
@@ -919,4 +956,72 @@ display:none;/*Implemented by Ramswaroop Soren, just to get that hidden*/
         border-radius: 10px;
         background-color: rgba(52, 152, 219, 0.5);   
     }
+}
+
+/*= SLIDES STYLING
+--------------------------------------------------------*/
+
+#slide1, #slide2, #slide3, #slide4, #slide5, #slide6, #slide7, #slide8, #slide9{ width: 100%; }
+#slide1{
+	background:url('../img/slide1.jpg') 50% 0 no-repeat fixed;
+	color: #fff;
+	margin: 0;
+	padding: 70px 0 260px 0;
+	background-size: cover;
+}
+
+#slide2{
+	
+	background:rgba(0,0,0,0.4);
+	background: url(../img/slide2.jpg) 50% 0 no-repeat fixed;
+	color: #333333;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 70px 0;
+	background-size: cover;
+	
+}
+
+#slide3{
+	background: url(../img/slide3.jpg) 50% 0 no-repeat fixed;
+	color: #fff;
+	padding: 70px 0 0 0;	
+	background-size: cover;
+}
+
+#slide4{background: url(../img/slide4.jpg) 50% 0 no-repeat fixed;
+	background-color: #fff;
+	color: #333333;
+	padding: 70px 0;
+	background-size: cover;
+}
+
+#slide5{
+	background: url(../img/slide5.jpg) 50% 0 no-repeat fixed;
+	margin: 0 auto;
+	padding: 70px 0;
+	color: #fff;
+	background-size: cover;
+}
+
+#slide6{background: url(../img/slide6.jpg) 50% 0 no-repeat fixed;
+	background-color: #fff;
+	color: #333333;
+	padding: 70px 0;
+	background-size: cover;
+}
+
+#slide7{
+	background: url(../img/slide7.jpg) 50% 0 no-repeat fixed;
+	margin: 0 auto;
+	padding: 70px 0;
+	color: #fff;
+	background-size: cover;
+}
+
+#slide8{background: url(../img/slide8.jpg) 50% 0 no-repeat fixed;
+	background-color: #fff;
+	color: #333333;
+	padding: 70px 0;
+	background-size: cover;
 }
